@@ -45,9 +45,9 @@ export default function Cartela() {
         myArray.push(aleatorio)
       }
     }
-    console.log(myArray.sort())
+    console.log((myArray.sort((n1,n2) => n1 - n2)))
 
-    return (myArray.sort((n1,n2) => n1 - n2)).toString().replaceAll(',', ' ')
+    return myArray.sort((n1,n2) => n1 - n2)
   }
  
   return (
@@ -70,7 +70,14 @@ export default function Cartela() {
       </label>
       <button onClick={showResult} type='button'>Gerar números aleatórios</button>
       <div className="result">
-          {flag ? generateRandomSix() : ''}
+          {flag ? generateRandomSix().map((number) => (
+            <div 
+              className='resultNumber' 
+              key={number}
+            >
+              {('0' + number).slice(-2)}
+            </div>
+          )) : ''}
       </div>
     </form>
   )

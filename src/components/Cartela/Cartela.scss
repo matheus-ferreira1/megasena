@@ -23,14 +23,24 @@
          display: inline-block;
          border: 1px solid var(--text-body);
          padding: 0.4rem 0.8rem;
-
-         &:hover {
-            background-color: var(--green);
-         }
       }
    }
 }
 
 input:checked + span {
    background-color: var(--green);
+}
+
+.result {
+   position: absolute;
+   bottom: 5rem;
+   display: flex;
+   gap: 20px;
+
+   .resultNumber {
+      background-color: var(--green);
+      font-size: 1.5rem;
+      padding: 0.7rem;
+      border-radius: 100px;
+   }
 }
